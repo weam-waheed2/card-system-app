@@ -1,0 +1,44 @@
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 table-responsive">
+                <table class="table table-striped border table-bordered">
+                    <thead>
+                        <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">User ID</th>
+                        <th scope="col">Action</th>
+                        <th scope="col">ipAddress</th>
+                        <th scope="col">macAddress</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngIf="logs.length > 0">
+                        <tr *ngFor="let log of logs; let i = index">
+                        <th scope="row">{{ log.id }}</th>
+                        <td>{{ log.user_id }}</td>
+                        <td>{{ log.action }}</td>
+                        <td>{{ log.ip_address }}</td>
+                        <td>{{ log.mac_address }}</td>
+                        </tr>
+                    </tbody>
+                    </table>
+                    <div *ngIf="logs.length === 0">
+                    <div class="alert alert-danger text-danger py-2">No Data Yet!</div>
+                    </div>
+            </div>
+
+            <div class="col-lg-12">
+                <nav aria-label="pagination">
+                    <ul class="pagination">
+                      <li class="page-item">
+                        <button (click)="prevPage()" [disabled]="currentPage === 1" class="page-link">Previous</button>
+                      </li>
+                      <li class="page-item"><a class="page-link" href="#">Page {{ currentPage }} of {{ totalPages }}</a></li>
+                      <li class="page-item">
+                        <button (click)="nextPage()" [disabled]="currentPage === totalPages" class="page-link">Next</button>
+                      </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>

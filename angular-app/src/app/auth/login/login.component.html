@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-lg-5 m-auto">
+        <img src="../../../assets/login.png" width="100%">
+    </div>
+    <div class="col-lg-7 m-auto">
+        <div class="bg-light rounded shadow">
+            <div class="p-4 text-center">
+                <img src="../../../assets/logo-app.png" width="80">
+                <h4 class="pt-3">Nice to See You Again</h4>
+            </div>
+            <form [formGroup]="loginForm" (ngSubmit)="submit()" class="p-4">
+                <div class="m-auto p-3">
+                    <div *ngIf="errorMessage" class="error-message alert alert-danger">
+                        {{ errorMessage }}
+                      </div>                      
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email address</label>
+                  <input type="email" formControlName="email" required class="form-control" id="email" placeholder="example@gmail.com">
+                </div>
+                <div class="mb-3">
+                  <label for="password" class="form-label">Password</label>
+                  <input type="password" formControlName="password" required class="form-control" id="password" placeholder="**********">
+                </div>
+                <button type="submit" class="btn btn-success">Login</button>
+                <div class="form-text">Don't have an account ? <a class="text-success" [routerLink]="['/register']">Sign Up</a>.</div>
+            </form>
+        </div>
+    </div>
+</div>

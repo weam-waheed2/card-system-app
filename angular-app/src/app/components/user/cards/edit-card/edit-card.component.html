@@ -1,0 +1,68 @@
+
+<div class="container text-start">
+    <div class="row">
+
+
+        <div class="col-lg-12 ">
+            <div class="card py-3 bg-light">
+                <div class="card-body">
+                    <div class="mb-3 text-end">
+                        <a [routerLink]="['/dashboard/cards']" class="btn btn-success btn-sm">Back</a>
+                    </div>
+                    <h4 class="text-center">Update Card</h4>
+                
+                    <form [formGroup]="form" (ngSubmit)="submit()"  enctype="multipart/form-data" >
+                
+                        <div class="row">
+                            <div class="col-lg-6 my-3">
+                                <label class="mb-1" for="role">Name</label>
+                                <input formControlName="name" [(ngModel)]="cards.name" id="name" type="text" class="form-control" placeholder="Ahmed Zidan">
+                                <div *ngIf="f['name'].touched && f['name'].invalid" class="alert alert-danger">
+                                    <div *ngIf="f['name'].errors && f['name'].errors['required']" class="text-danger">
+                                        Name is required
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 my-3">
+                                <label class="mb-1" for="email">Email</label>
+                                <input formControlName="email" [(ngModel)]="cards.email" id="email" type="text" class="form-control" placeholder="example@gmail.com">
+                                <div *ngIf="f['email'].errors && f['email'].errors['required']" class="text-danger">
+                                    Email is required
+                                </div>
+                            </div>
+                            <div class="col-lg-6 my-2">
+                                <label class="mb-1" for="company">Company</label>
+                                <input formControlName="company" [(ngModel)]="cards.company"  id="company" type="text" class="form-control" placeholder="test">
+                            </div>
+                            <div class="col-lg-6 my-2">
+                                <label class="mb-1" for="position">Position</label>
+                                <input formControlName="position" [(ngModel)]="cards.position"  id="position" type="text" class="form-control" placeholder="test">
+                            </div>
+                            <div class="col-lg-6 my-2">
+                                <label class="mb-1" for="phone">Phone</label>
+                                <input formControlName="phone" [(ngModel)]="cards.phone"  id="phone" type="text" class="form-control" placeholder="01097367576">
+                            </div>
+                            <div class="col-lg-6 my-2">
+                                <label class="mb-1" for="mobile">Phone 2</label>
+                                <input formControlName="mobile" [(ngModel)]="cards.mobile"  id="mobile" type="text" class="form-control" placeholder="01097367576">
+                            </div>
+                            <div class="col-lg-6 my-2">
+                                <label class="mb-1" for="address">Address</label>
+                                <input formControlName="address" [(ngModel)]="cards.address"  id="address" type="text" class="form-control" placeholder="test">
+                            </div>
+                            <div class="col-lg-6 my-2 mb-4">
+                                <label class="mb-1" for="company_address">Company Address</label>
+                                <input formControlName="company_address" [(ngModel)]="cards.company_address"  id="company_address" type="text" class="form-control" placeholder="test">
+                            </div>
+                            
+                        </div>
+                            
+                
+                        <button class="btn btn-primary btn-sm" type="submit" >Update Card</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+</div>

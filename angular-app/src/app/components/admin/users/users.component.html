@@ -1,0 +1,39 @@
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 table-responsive">
+                <div class="mb-3 text-end">
+                    <a [routerLink]="['/admin/users/create']" class="btn btn-primary btn-sm">Create User +</a>
+                </div>
+                <table class="table table-striped border table-bordered" >
+                    <thead>
+                        <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">role</th>
+                        <th scope="col">Active</th>
+                        <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngIf="users.length > 0;">
+                        <tr *ngFor="let user of users">
+                        <th scope="row">{{user.id}}</th>
+                        <td>{{user.name}}</td>
+                        <td>{{user.email}}</td>
+                        <td>{{user.role}}</td>
+                        <td [ngClass]="user.is_active ? 'bg-success-subtle btn-sm' : 'bg-danger-subtle btn-sm'">{{user.is_active ? 'Active' : 'Not Active'}}</td>
+                        <td>
+                            <button type="button" (click)="deleteUser(user.id)" class="btn btn-danger btn-sm me-2">Delete</button>
+                            <a [routerLink]="['/admin/users/',user.id]" class="btn btn-success btn-sm">Edit</a>
+                        </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div *ngIf="users.length === 0">
+                    <div class="alert alert-danger text-danger py-2">No Data Yet!</div>
+                </div>
+            </div>
+            
+        </div>
+    </div>

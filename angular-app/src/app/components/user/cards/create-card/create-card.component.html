@@ -1,0 +1,62 @@
+
+<div class="container text-start">
+    <div class="row">
+
+
+        <div class="col-lg-12 ">
+            <div class="card py-3 bg-light">
+                <div class="card-body">
+                    <div class="mb-3 text-end">
+                        <a [routerLink]="['/dashboard/cards']" class="btn btn-success btn-sm">Back</a>
+                    </div>
+                    <h4 class="text-center">Create New Card</h4>
+                
+                    <form [formGroup]="formCreate" (ngSubmit)="submit()"  enctype="multipart/form-data">
+                
+                        <div class="row">
+                            <div class="col-lg-6 my-2">
+                                <label class="mb-1" for="role">Name</label>
+                                <input formControlName="name" id="name" type="text" class="form-control" placeholder="Ahmed Zidan">
+                            </div>
+                            <div class="col-lg-6 my-2">
+                                <label class="mb-1" for="role">email</label>
+                                <input formControlName="email" id="email" type="text" class="form-control" placeholder="example@gmail.com">
+                            </div>
+                            <div class="col-lg-6 my-2">
+                                <label class="mb-1" for="role">Company</label>
+                                <input formControlName="company" id="company" type="text" class="form-control" placeholder="test">
+                            </div>
+                            <div class="col-lg-6 my-2">
+                                <label class="mb-1" for="role">Position</label>
+                                <input formControlName="position" id="position" type="text" class="form-control" placeholder="test">
+                            </div>
+                            <div class="col-lg-6 my-2">
+                                <label class="mb-1" for="role">Phone</label>
+                                <input formControlName="phone" id="phone" type="text" class="form-control" placeholder="01097367576">
+                            </div>
+                            <div class="col-lg-6 my-2">
+                                <label class="mb-1" for="role">Phone 2</label>
+                                <input formControlName="mobile" id="mobile" type="text" class="form-control" placeholder="01097367576">
+                            </div>
+                            <div class="col-lg-6 my-2">
+                                <label class="mb-1" for="role">Address</label>
+                                <input formControlName="address" id="address" type="text" class="form-control" placeholder="test">
+                            </div>
+                            <div class="col-lg-6 my-2">
+                                <label class="mb-1" for="role">Company Address</label>
+                                <input formControlName="company_address" id="company_address" type="text" class="form-control" placeholder="test">
+                            </div>
+                            <div class="col-lg-12 my-2 mb-5">
+                                <label class="mb-1" for="role">Logo</label>
+                                <input id="logo" type="file" class="form-control" (change)="uploadFile($event)">
+                            </div>
+                        </div>
+                
+                        <button class="btn btn-primary btn-sm" type="submit" >Create card</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+</div>
